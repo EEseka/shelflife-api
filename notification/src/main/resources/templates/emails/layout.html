@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(content, title)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Email from ShelfLife</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body style="background-color: #f4f4f4; margin: 0; padding: 0;">
+
+<div class="email-container"
+     style="background-color: #ffffff; font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+
+    <div th:replace="~{emails/fragments/header :: header}"></div>
+
+    <div class="content-padding" th:replace="${content}"
+         style="padding: 30px 20px; min-height: 150px; color: #333333; line-height: 1.6;">
+    </div>
+
+    <div th:replace="~{emails/fragments/footer :: footer}"></div>
+</div>
+</body>
+</html>

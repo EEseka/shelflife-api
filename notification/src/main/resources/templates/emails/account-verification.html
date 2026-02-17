@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{emails/layout :: layout(~{::content}, 'Verify your ShelfLife account')}">
+<body>
+<div th:fragment="content">
+    <h1 style="font-size: 24px; color: #111111; margin-top: 0; font-family: sans-serif;">Welcome to ShelfLife, <span
+            th:text="${username}">User</span>!</h1>
+
+    <p style="font-size: 16px; color: #555555; line-height: 1.5;">Thanks for creating an account. We're excited to help
+        you track your food and reduce waste!</p>
+    <p style="font-size: 16px; color: #555555; line-height: 1.5;">To get started, please verify your email address:</p>
+
+    <div style="text-align: center; margin: 30px 0;">
+        <a th:href="${verificationUrl}" target="_blank" class="button"
+           style="background-color: #2E7D32; color: #ffffff;">Verify Email Address</a>
+        <br>
+        <a th:href="${devVerificationUrl}"
+           style="color: #6c757d; font-size: 13px; margin-top: 10px; display: inline-block;">Open directly in App
+            (Dev)</a>
+    </div>
+
+    <div style="margin-top: 30px; border-top: 1px solid #eeeeee; padding-top: 20px; color: #555555; font-size: 14px; line-height: 1.5;">
+        <p style="margin-bottom: 5px;"><strong>Why verify?</strong></p>
+        <p style="margin-top: 0;">Email verification helps us ensure you own this address and protects your account.</p>
+
+        <p style="margin-bottom: 5px; margin-top: 15px;"><strong>Security Notice:</strong></p>
+        <p style="margin-top: 0;">This link expires in <strong>24 hours</strong>. If you didn't create an account with
+            ShelfLife, you can safely ignore this email.</p>
+    </div>
+</div>
+</body>
+</html>
